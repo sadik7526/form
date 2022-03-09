@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>forrm</title>
+</head>
+<body>
+<form name="for">
+	username:<input type="text" name="user" required><span id="demo1"></span><br><br>
+
+	password:<input type="password" name="pwd"><span id="demo"></span><br><br>
+	
+	<button type="button" onclick="one()">submit</button>
+	<script type="text/javascript">
+		function one(){
+					var x=document.forms["for"]["pwd"].value;
+					var y=document.forms["for"]["user"].value;
+					if (y==""){
+						document.getElementById("demo1").innerHTML="please fillout these field";
+					}
+					if (x==""){
+						document.getElementById("demo").innerHTML="please fillout these field";
+					}
+					else if(x.length<8){
+						document.getElementById("demo").innerHTML="atleast 8 characters";
+					}
+					else if(x.length>12){
+						document.getElementById("demo").innerHTML="maximum 12 characters";
+					}
+					else{
+						document.getElementById("demo").innerHTML="password is ok";
+					}
+
+		}
+
+
+	</script>
+</form>
+</body>
+</html>
